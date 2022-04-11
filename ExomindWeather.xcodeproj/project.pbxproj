@@ -66,6 +66,10 @@
 		32B04F0328047EDA00342412 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		32B04F0528049DCD00342412 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		32B04F072804A7C400342412 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		32B04F092804C8DF00342412 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		32B04F102804CD4B00342412 /* Weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Weather.png; sourceTree = "<group>"; };
+		32B04F112804CD4B00342412 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home.png; sourceTree = "<group>"; };
+		32B04F132804CD9000342412 /* Loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 		32B04EAF280450E100342412 = {
 			isa = PBXGroup;
 			children = (
+				32B04F092804C8DF00342412 /* README.md */,
 				32B04EBA280450E100342412 /* ExomindWeather */,
 				32B04EB9280450E100342412 /* Products */,
 			);
@@ -102,6 +107,7 @@
 				32B04EE528045C7A00342412 /* Extensions */,
 				32B04EF3280463E000342412 /* Helpers */,
 				32B04EEE2804615700342412 /* Models */,
+				32B04F0A2804CC6900342412 /* Resources */,
 				32B04ED628045B3900342412 /* Views */,
 				32B04EBB280450E100342412 /* AppDelegate.swift */,
 				32B04EBD280450E100342412 /* SceneDelegate.swift */,
@@ -240,6 +246,24 @@
 				32B04F0128046F8800342412 /* WeatherTableView.swift */,
 			);
 			path = TableViews;
+			sourceTree = "<group>";
+		};
+		32B04F0A2804CC6900342412 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32B04F0B2804CC7C00342412 /* Screenshots */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32B04F0B2804CC7C00342412 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				32B04F112804CD4B00342412 /* Home.png */,
+				32B04F132804CD9000342412 /* Loading.png */,
+				32B04F102804CD4B00342412 /* Weather.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
