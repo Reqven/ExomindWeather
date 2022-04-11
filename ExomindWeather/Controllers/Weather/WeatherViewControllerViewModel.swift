@@ -136,7 +136,7 @@ extension WeatherViewControllerViewModel: UITableViewDataSource, UITableViewDele
     guard let weather = data.elementAt(indexPath.row) else { return cell }
     
     let viewModel = WeatherCellViewModel(with: weather)
-    cell.setup(with: viewModel)
+    cell.configure(with: viewModel)
     return cell
   }
 }
