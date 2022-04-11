@@ -45,7 +45,7 @@ class WeatherCell: UITableViewCell {
       guard let self = self else { return }
       
       switch(result) {
-        case .failure(let error): print(error)
+        case .failure(let error): print(error.localizedDescription)
         case .success(let image): DispatchQueue.main.async {
           self.weatherImage.image = image
         }

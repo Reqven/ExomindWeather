@@ -13,6 +13,7 @@ class WeatherViewControllerViewModel: NSObject {
   var delegate: WeatherViewControllerViewModelDelegate?
   
   private var timer: Timer?
+  private var error = false
   private var currentTime = 0
   private let maxLoadingTime = 15
   private let cityFetchInterval = 2
@@ -69,8 +70,11 @@ class WeatherViewControllerViewModel: NSObject {
       guard let self = self else { return }
   
       switch(result) {
-        case .success(let response): self.data.append(Weather.from(response: response))
-        case .failure(let error): print(error)
+        case .success(let response):
+          self.data.append(Weather.from(response: response))
+        case .failure(let error):
+          self.error = true
+          print(error.localizedDescription)
       }
     })
   }
@@ -109,7 +113,7 @@ class WeatherViewControllerViewModel: NSObject {
       
       // Wait for progressBar animation to end
       Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
-        self.delegate?.didFinishLoading()
+        self.delegate?.didFinishLoading(error: self.error)
       }
     }
   }
@@ -138,5 +142,5 @@ extension WeatherViewControllerViewModel: UITableViewDataSource {
 protocol WeatherViewControllerViewModelDelegate {
   func didUpdateMessage(message: String)
   func didUpdateProgress(progress: Float)
-  func didFinishLoading()
+  func didFinishLoading(error: Bool)
 }

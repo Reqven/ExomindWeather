@@ -76,8 +76,15 @@ extension WeatherViewController: WeatherViewControllerViewModelDelegate {
     loadingView.progressBar.setProgress(progress, animated: true)
   }
   
-  func didFinishLoading() {
+  func didFinishLoading(error: Bool) {
     tableView.reloadData()
     loadingView.isLoading = false
+    
+    if error {
+      presentAlert(title: "Error", message: """
+        An error occured when fetching one or more cities from the API.
+        The TableView might be incomplete. Check the logs for more information.
+      """)
+    }
   }
 }

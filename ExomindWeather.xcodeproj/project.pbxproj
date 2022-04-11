@@ -31,6 +31,8 @@
 		32B04EFD28046BB800342412 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EFC28046BB800342412 /* LoadingView.swift */; };
 		32B04EFF28046C1400342412 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */; };
 		32B04F0228046F8800342412 /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0128046F8800342412 /* WeatherTableView.swift */; };
+		32B04F0428047EDA00342412 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0328047EDA00342412 /* UIViewController+Ext.swift */; };
+		32B04F0628049DCD00342412 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0528049DCD00342412 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		32B04EFC28046BB800342412 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
 		32B04F0128046F8800342412 /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
+		32B04F0328047EDA00342412 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		32B04F0528049DCD00342412 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 				32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */,
 				32B04EEA28045CD800342412 /* UIStackView+Ext.swift */,
 				32B04EE628045C8F00342412 /* UIView+Ext.swift */,
+				32B04F0328047EDA00342412 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			children = (
 				32B04EF4280463F800342412 /* Network.swift */,
 				32B04EF62804642300342412 /* OpenWeatherAPI.swift */,
+				32B04F0528049DCD00342412 /* Error.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				32B04EC0280450E100342412 /* HomeViewController.swift in Sources */,
 				32B04EFB28046B9E00342412 /* RoundedButton.swift in Sources */,
 				32B04F0228046F8800342412 /* WeatherTableView.swift in Sources */,
+				32B04F0428047EDA00342412 /* UIViewController+Ext.swift in Sources */,
 				32B04EFF28046C1400342412 /* UIEdgeInsets+Ext.swift in Sources */,
 				32B04EDA28045B6500342412 /* WeatherCell.swift in Sources */,
 				32B04EF02804615D00342412 /* Weather.swift in Sources */,
@@ -318,6 +325,7 @@
 				32B04EE928045CA300342412 /* NSLayoutConstraint+Ext.swift in Sources */,
 				32B04EF5280463F800342412 /* Network.swift in Sources */,
 				32B04EF72804642300342412 /* OpenWeatherAPI.swift in Sources */,
+				32B04F0628049DCD00342412 /* Error.swift in Sources */,
 				32B04EFD28046BB800342412 /* LoadingView.swift in Sources */,
 				32B04EDC28045B8600342412 /* WeatherCellViewModel.swift in Sources */,
 				32B04EBC280450E100342412 /* AppDelegate.swift in Sources */,
