@@ -13,6 +13,7 @@
 		32B04EC5280450E100342412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B04EC4280450E100342412 /* Assets.xcassets */; };
 		32B04EC8280450E100342412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B04EC6280450E100342412 /* LaunchScreen.storyboard */; };
 		32B04ED32804534000342412 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04ED22804534000342412 /* WeatherViewController.swift */; };
+		32B04ED52804590500342412 /* WeatherViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04ED42804590500342412 /* WeatherViewControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		32B04EC7280450E100342412 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32B04EC9280450E100342412 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32B04ED22804534000342412 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		32B04ED42804590500342412 /* WeatherViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				32B04ED22804534000342412 /* WeatherViewController.swift */,
+				32B04ED42804590500342412 /* WeatherViewControllerViewModel.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B04ED52804590500342412 /* WeatherViewControllerViewModel.swift in Sources */,
 				32B04EC0280450E100342412 /* HomeViewController.swift in Sources */,
 				32B04ED32804534000342412 /* WeatherViewController.swift in Sources */,
 				32B04EBC280450E100342412 /* AppDelegate.swift in Sources */,
