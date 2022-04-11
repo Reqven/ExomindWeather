@@ -31,26 +31,17 @@ class WeatherCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setup(with viewModel: WeatherCellViewModel) {
+  func configure(with viewModel: WeatherCellViewModel) {
+    viewModel.delegate = self
+    viewModel.loadImage()
     self.viewModel = viewModel
   }
   
   private func updateContent() {
     guard let viewModel = viewModel else { return }
     cityLabel.text = viewModel.city
+    weatherImage.image = viewModel.image
     temperatureLabel.text = viewModel.temperature
-    
-    guard let imageURL = viewModel.imageURL else { return }
-    Network.image(from: imageURL) { [weak self] result in
-      guard let self = self else { return }
-      
-      switch(result) {
-        case .failure(let error): print(error.localizedDescription)
-        case .success(let image): DispatchQueue.main.async {
-          self.weatherImage.image = image
-        }
-      }
-    }
   }
 }
 
@@ -71,5 +62,14 @@ extension WeatherCell {
       stackView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
       stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
     ])
+  }
+}
+
+
+//MARK: - WeatherCellViewModelDelegate
+extension WeatherCell: WeatherCellViewModelDelegate {
+  
+  func didLoadImage() {
+    updateContent()
   }
 }
