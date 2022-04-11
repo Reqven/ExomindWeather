@@ -23,6 +23,13 @@ class WeatherViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     tableView.tableFooterView = UIView(frame: loadingView.frame)
   }
+  
+  @objc private func onRestart(_ sender: UIButton?) {
+    loadingView.progressBar.setProgress(0, animated: false)
+    loadingView.isLoading = true
+    viewModel.start()
+    tableView.reloadData()
+  }
 }
 
 
@@ -35,6 +42,7 @@ extension WeatherViewController {
     
     viewModel.delegate = self
     tableView.dataSource = viewModel
+    loadingView.restartButton.addTarget(self, action: #selector(onRestart), for: .touchUpInside)
     
     setupLayout()
     viewModel.start()
