@@ -42,6 +42,7 @@ extension WeatherViewController {
     
     viewModel.delegate = self
     tableView.dataSource = viewModel
+    tableView.delegate = viewModel
     loadingView.restartButton.addTarget(self, action: #selector(onRestart), for: .touchUpInside)
     
     setupLayout()

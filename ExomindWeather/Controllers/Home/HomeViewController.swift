@@ -17,7 +17,6 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-    setupLayout()
   }
   
   @objc private func onTouch(_ sender: UIButton?) {
@@ -35,6 +34,8 @@ extension HomeViewController {
     view.backgroundColor = .systemBackground
     button.setTitle("Open", for: .normal)
     button.addTarget(self, action: #selector(onTouch), for: .touchUpInside)
+    
+    setupLayout()
   }
   
   private func setupLayout() {

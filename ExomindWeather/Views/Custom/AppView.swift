@@ -19,12 +19,16 @@ class AppView: UIStackView {
   init() {
     super.init(frame: .zero)
     setup()
-    setupLayout()
   }
   
   required init(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+}
+
+
+//MARK: - Setup
+extension AppView {
   
   private func setup() {
     alignment = .center
@@ -46,6 +50,7 @@ class AppView: UIStackView {
     descriptionLabel.text = "Technical iOS test for the Exomind company. This app goes through a list of cities and fetch the weather from the OpenWeather API."
   
     addArrangedSubviews(imageView, verticalStackView)
+    setupLayout()
   }
   
   private func setupLayout() {

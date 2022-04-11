@@ -19,7 +19,6 @@ class LoadingView: UIView {
     stack.spacing = 8
     stack.axis = .vertical
     stack.distribution = .equalSpacing
-    stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
   }()
   
@@ -30,7 +29,6 @@ class LoadingView: UIView {
     effect.layer.shadowRadius = 0
     effect.layer.shadowColor = UIColor.systemGray3.cgColor
     effect.layer.shadowOffset = CGSize(width: 0, height: -0.5)
-    effect.translatesAutoresizingMaskIntoConstraints = false
     return effect
   }()
   
@@ -50,7 +48,6 @@ class LoadingView: UIView {
   let restartButton: UIButton = {
     var button = RoundedButton()
     button.setTitle("Restart", for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
     return button
   }()
   
@@ -83,6 +80,10 @@ extension LoadingView {
     translatesAutoresizingMaskIntoConstraints = false
     layoutMargins = UIEdgeInsets(vertical: 10, horizontal: 16)
     
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    blurEffect.translatesAutoresizingMaskIntoConstraints = false
+    restartButton.translatesAutoresizingMaskIntoConstraints = false
+    
     stackView.addArrangedSubviews(progressLabel, progressBar)
     addSubviews(blurEffect, stackView, restartButton)
     
@@ -92,9 +93,9 @@ extension LoadingView {
       blurEffect.topAnchor.constraint(equalTo: topAnchor),
       blurEffect.bottomAnchor.constraint(equalTo: bottomAnchor),
       
-      stackView.heightAnchor.constraint(equalToConstant: 45),
+      stackView.heightAnchor.constraint(equalToConstant: 50),
       progressBar.heightAnchor.constraint(equalToConstant: 5),
-      restartButton.heightAnchor.constraint(equalToConstant: 45),
+      restartButton.heightAnchor.constraint(equalToConstant: 50),
       
       stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
       stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),

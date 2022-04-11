@@ -15,9 +15,9 @@ class WeatherViewControllerViewModel: NSObject {
   private var timer: Timer?
   private var error = false
   private var currentTime = 0
-  private let maxLoadingTime = 15
-  private let cityFetchInterval = 2
-  private let messageUpdateInterval = 2
+  private let maxLoadingTime = 60
+  private let cityFetchInterval = 10
+  private let messageUpdateInterval = 6
   
   private var data: [Weather] = []
   
@@ -97,19 +97,19 @@ class WeatherViewControllerViewModel: NSObject {
   }
   
   @objc private func execute() {
-    self.currentTime += 1
-    self.updateProgress()
+    currentTime += 1
+    updateProgress()
     
-    if self.messageUpdateNeeded {
-      self.updateMessage()
-      self.messageIndex += 1
+    if messageUpdateNeeded {
+      updateMessage()
+      messageIndex += 1
     }
-    if self.cityFetchNeeded {
-      self.fetchCity()
-      self.cityIndex += 1
+    if cityFetchNeeded {
+      fetchCity()
+      cityIndex += 1
     }
-    if self.currentTime >= self.maxLoadingTime {
-      self.timer?.invalidate()
+    if currentTime >= maxLoadingTime {
+      timer?.invalidate()
       
       // Wait for progressBar animation to end
       Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
@@ -120,11 +120,15 @@ class WeatherViewControllerViewModel: NSObject {
 }
 
 
-//MARK: - UITableViewDataSource
-extension WeatherViewControllerViewModel: UITableViewDataSource {
+//MARK: - UITableViewDataSource - UITableViewDelegate
+extension WeatherViewControllerViewModel: UITableViewDataSource, UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.data.count
+    return data.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
