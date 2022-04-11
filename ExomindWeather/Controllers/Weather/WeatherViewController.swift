@@ -31,6 +31,7 @@ extension WeatherViewController {
     
     tableView.dataSource = viewModel
     tableView.rowHeight = UITableView.automaticDimension
+    tableView.register(WeatherCell.self, forCellReuseIdentifier: WeatherCell.identifier)
   }
   
   private func setupLayout() {
