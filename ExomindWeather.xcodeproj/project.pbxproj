@@ -25,6 +25,8 @@
 		32B04EED28045EF000342412 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EEC28045EF000342412 /* Array+Ext.swift */; };
 		32B04EF02804615D00342412 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EEF2804615D00342412 /* Weather.swift */; };
 		32B04EF22804616300342412 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF12804616300342412 /* WeatherResponse.swift */; };
+		32B04EF5280463F800342412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF4280463F800342412 /* Network.swift */; };
+		32B04EF72804642300342412 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF62804642300342412 /* OpenWeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		32B04EEC28045EF000342412 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		32B04EEF2804615D00342412 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		32B04EF12804616300342412 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		32B04EF4280463F800342412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		32B04EF62804642300342412 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				32B04ECF280452BA00342412 /* Controllers */,
 				32B04EE528045C7A00342412 /* Extensions */,
+				32B04EF3280463E000342412 /* Helpers */,
 				32B04EEE2804615700342412 /* Models */,
 				32B04ED628045B3900342412 /* Views */,
 				32B04EBB280450E100342412 /* AppDelegate.swift */,
@@ -183,6 +188,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		32B04EF3280463E000342412 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				32B04EF4280463F800342412 /* Network.swift */,
+				32B04EF62804642300342412 /* OpenWeatherAPI.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,6 +277,8 @@
 				32B04ED32804534000342412 /* WeatherViewController.swift in Sources */,
 				32B04EED28045EF000342412 /* Array+Ext.swift in Sources */,
 				32B04EE928045CA300342412 /* NSLayoutConstraint+Ext.swift in Sources */,
+				32B04EF5280463F800342412 /* Network.swift in Sources */,
+				32B04EF72804642300342412 /* OpenWeatherAPI.swift in Sources */,
 				32B04EDC28045B8600342412 /* WeatherCellViewModel.swift in Sources */,
 				32B04EBC280450E100342412 /* AppDelegate.swift in Sources */,
 				32B04EEB28045CD800342412 /* UIStackView+Ext.swift in Sources */,
