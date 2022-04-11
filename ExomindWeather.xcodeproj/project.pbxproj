@@ -208,9 +208,9 @@
 		32B04EF3280463E000342412 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				32B04F0528049DCD00342412 /* Error.swift */,
 				32B04EF4280463F800342412 /* Network.swift */,
 				32B04EF62804642300342412 /* OpenWeatherAPI.swift */,
-				32B04F0528049DCD00342412 /* Error.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
