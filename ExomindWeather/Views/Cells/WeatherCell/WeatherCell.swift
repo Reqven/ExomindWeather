@@ -38,8 +38,8 @@ class WeatherCell: UITableViewCell {
   private func updateContent() {
     guard let viewModel = viewModel else { return }
     cityLabel.text = viewModel.city
+    weatherImage.image = viewModel.image
     temperatureLabel.text = viewModel.temperature
-    weatherImage.image = UIImage(systemName: "sun.max.fill")
   }
 }
 

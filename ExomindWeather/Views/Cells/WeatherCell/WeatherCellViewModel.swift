@@ -10,13 +10,14 @@ import UIKit
 class WeatherCellViewModel {
   
   //MARK: - Properties
-  private var data: (String, Double)
+  private var data: Weather
   
-  var city: String { data.0 }
-  var temperature: String { "\(Int(data.1.rounded()))°" }
+  var city: String { data.city }
+  var image: UIImage? { data.image }
+  var temperature: String { "\(Int(data.temperature.rounded()))°" }
   
   //MARK: - Methods
-  init(weather: (String, Double)) {
+  init(with weather: Weather) {
     data = weather
   }
 }

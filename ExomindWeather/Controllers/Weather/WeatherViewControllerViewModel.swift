@@ -10,8 +10,10 @@ import UIKit
 class WeatherViewControllerViewModel: NSObject {
   
   //MARK: - Properties
-  private var data = [("Paris", 10.0), ("Lyon", 15.0)]
-  
+  private var data = [
+    Weather(city: "Paris", temperature: 10, image: UIImage(systemName: "cloud.fill")),
+    Weather(city: "Lyon", temperature: 15, image: UIImage(systemName: "sun.max.fill"))
+  ]
 }
 
 
@@ -24,9 +26,9 @@ extension WeatherViewControllerViewModel: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: WeatherCell.identifier, for: indexPath) as! WeatherCell
-    guard let item = data.elementAt(indexPath.row) else { return cell }
+    guard let weather = data.elementAt(indexPath.row) else { return cell }
     
-    let viewModel = WeatherCellViewModel(weather: item)
+    let viewModel = WeatherCellViewModel(with: weather)
     cell.setup(with: viewModel)
     return cell
   }

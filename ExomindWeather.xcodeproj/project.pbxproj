@@ -23,6 +23,8 @@
 		32B04EE928045CA300342412 /* NSLayoutConstraint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EE828045CA300342412 /* NSLayoutConstraint+Ext.swift */; };
 		32B04EEB28045CD800342412 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EEA28045CD800342412 /* UIStackView+Ext.swift */; };
 		32B04EED28045EF000342412 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EEC28045EF000342412 /* Array+Ext.swift */; };
+		32B04EF02804615D00342412 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EEF2804615D00342412 /* Weather.swift */; };
+		32B04EF22804616300342412 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF12804616300342412 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		32B04EE828045CA300342412 /* NSLayoutConstraint+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Ext.swift"; sourceTree = "<group>"; };
 		32B04EEA28045CD800342412 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		32B04EEC28045EF000342412 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		32B04EEF2804615D00342412 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		32B04EF12804616300342412 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			children = (
 				32B04ECF280452BA00342412 /* Controllers */,
 				32B04EE528045C7A00342412 /* Extensions */,
+				32B04EEE2804615700342412 /* Models */,
 				32B04ED628045B3900342412 /* Views */,
 				32B04EBB280450E100342412 /* AppDelegate.swift */,
 				32B04EBD280450E100342412 /* SceneDelegate.swift */,
@@ -169,6 +174,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		32B04EEE2804615700342412 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32B04EEF2804615D00342412 /* Weather.swift */,
+				32B04EF12804616300342412 /* WeatherResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +257,7 @@
 				32B04EE728045C8F00342412 /* UIView+Ext.swift in Sources */,
 				32B04EC0280450E100342412 /* HomeViewController.swift in Sources */,
 				32B04EDA28045B6500342412 /* WeatherCell.swift in Sources */,
+				32B04EF02804615D00342412 /* Weather.swift in Sources */,
 				32B04EE428045C5D00342412 /* WeatherImageView.swift in Sources */,
 				32B04EDF28045C0400342412 /* CityLabel.swift in Sources */,
 				32B04ED32804534000342412 /* WeatherViewController.swift in Sources */,
@@ -253,6 +268,7 @@
 				32B04EEB28045CD800342412 /* UIStackView+Ext.swift in Sources */,
 				32B04EE128045C2F00342412 /* TemperatureLabel.swift in Sources */,
 				32B04EBE280450E100342412 /* SceneDelegate.swift in Sources */,
+				32B04EF22804616300342412 /* WeatherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
