@@ -10,9 +10,9 @@ import UIKit
 struct Weather {
   let city: String
   let temperature: Double
-  let image: UIImage?
+  let icon: String?
   
   static func from(response: WeatherResponse) -> Weather {
-    return Weather(city: response.name, temperature: response.main.temp, image: nil)
+    return Weather(city: response.name, temperature: response.main.temp, icon: response.weather.first?.icon)
   }
 }

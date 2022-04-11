@@ -13,8 +13,8 @@ class WeatherViewControllerViewModel: NSObject {
   var delegate: WeatherViewControllerViewModelDelegate?
   
   private var data = [
-    Weather(city: "Paris", temperature: 10, image: UIImage(systemName: "cloud.fill")),
-    Weather(city: "Lyon", temperature: 15, image: UIImage(systemName: "sun.max.fill"))
+    Weather(city: "Paris", temperature: 10, icon: "01d"),
+    Weather(city: "Lyon", temperature: 15, icon: "01d")
   ]
   
   //MARK: - Methods
