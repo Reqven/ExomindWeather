@@ -10,16 +10,18 @@ import UIKit
 class WeatherViewController: UIViewController {
   
   //MARK: - Properties
-  private var tableView = UITableView(frame: .zero, style: .insetGrouped)
-  private var viewModel = WeatherViewControllerViewModel()
+  private let viewModel = WeatherViewControllerViewModel()
+  private let tableView = WeatherTableView()
+  private let loadingView = LoadingView()
   
   //MARK: - Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-    setupLayout()
-    
-    viewModel.fetch()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    tableView.tableFooterView = UIView(frame: loadingView.frame)
   }
 }
 
@@ -32,21 +34,25 @@ extension WeatherViewController {
     view.backgroundColor = .systemBackground
     
     viewModel.delegate = self
-    
     tableView.dataSource = viewModel
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.register(WeatherCell.self, forCellReuseIdentifier: WeatherCell.identifier)
+    loadingView.progressLabel.text = "Downloading..."
+    
+    setupLayout()
+    viewModel.fetch()
   }
   
   private func setupLayout() {
-    tableView.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(tableView)
+    view.addSubviews(tableView, loadingView)
     
     NSLayoutConstraint.activate([
       tableView.topAnchor.constraint(equalTo: view.topAnchor),
       tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      
+      loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
     ])
   }
 }
@@ -56,6 +62,10 @@ extension WeatherViewController {
 extension WeatherViewController: WeatherViewControllerViewModelDelegate {
   
   func didUpdateDataSource() {
-    tableView.reloadData()
+    loadingView.progressBar.setProgress(1, animated: true)
+    Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+      self.loadingView.progressLabel.text = "Done"
+      self.tableView.reloadData()
+    }
   }
 }

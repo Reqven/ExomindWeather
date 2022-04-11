@@ -27,6 +27,10 @@
 		32B04EF22804616300342412 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF12804616300342412 /* WeatherResponse.swift */; };
 		32B04EF5280463F800342412 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF4280463F800342412 /* Network.swift */; };
 		32B04EF72804642300342412 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EF62804642300342412 /* OpenWeatherAPI.swift */; };
+		32B04EFB28046B9E00342412 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EFA28046B9E00342412 /* RoundedButton.swift */; };
+		32B04EFD28046BB800342412 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EFC28046BB800342412 /* LoadingView.swift */; };
+		32B04EFF28046C1400342412 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */; };
+		32B04F0228046F8800342412 /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0128046F8800342412 /* WeatherTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		32B04EF12804616300342412 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		32B04EF4280463F800342412 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		32B04EF62804642300342412 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
+		32B04EFA28046B9E00342412 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		32B04EFC28046BB800342412 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
+		32B04F0128046F8800342412 /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,9 @@
 		32B04ED628045B3900342412 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32B04F0028046F7600342412 /* TableViews */,
+				32B04EF928046B8B00342412 /* Buttons */,
+				32B04EF828046B8500342412 /* Custom */,
 				32B04EE228045C4900342412 /* ImageViews */,
 				32B04EDD28045BF800342412 /* Labels */,
 				32B04ED728045B4700342412 /* Cells */,
@@ -175,6 +186,7 @@
 				32B04EE828045CA300342412 /* NSLayoutConstraint+Ext.swift */,
 				32B04EEA28045CD800342412 /* UIStackView+Ext.swift */,
 				32B04EE628045C8F00342412 /* UIView+Ext.swift */,
+				32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +207,30 @@
 				32B04EF62804642300342412 /* OpenWeatherAPI.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		32B04EF828046B8500342412 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				32B04EFC28046BB800342412 /* LoadingView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		32B04EF928046B8B00342412 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				32B04EFA28046B9E00342412 /* RoundedButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		32B04F0028046F7600342412 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+				32B04F0128046F8800342412 /* WeatherTableView.swift */,
+			);
+			path = TableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +306,9 @@
 				32B04ED52804590500342412 /* WeatherViewControllerViewModel.swift in Sources */,
 				32B04EE728045C8F00342412 /* UIView+Ext.swift in Sources */,
 				32B04EC0280450E100342412 /* HomeViewController.swift in Sources */,
+				32B04EFB28046B9E00342412 /* RoundedButton.swift in Sources */,
+				32B04F0228046F8800342412 /* WeatherTableView.swift in Sources */,
+				32B04EFF28046C1400342412 /* UIEdgeInsets+Ext.swift in Sources */,
 				32B04EDA28045B6500342412 /* WeatherCell.swift in Sources */,
 				32B04EF02804615D00342412 /* Weather.swift in Sources */,
 				32B04EE428045C5D00342412 /* WeatherImageView.swift in Sources */,
@@ -279,6 +318,7 @@
 				32B04EE928045CA300342412 /* NSLayoutConstraint+Ext.swift in Sources */,
 				32B04EF5280463F800342412 /* Network.swift in Sources */,
 				32B04EF72804642300342412 /* OpenWeatherAPI.swift in Sources */,
+				32B04EFD28046BB800342412 /* LoadingView.swift in Sources */,
 				32B04EDC28045B8600342412 /* WeatherCellViewModel.swift in Sources */,
 				32B04EBC280450E100342412 /* AppDelegate.swift in Sources */,
 				32B04EEB28045CD800342412 /* UIStackView+Ext.swift in Sources */,
