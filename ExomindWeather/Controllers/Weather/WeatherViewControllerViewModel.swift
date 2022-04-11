@@ -12,23 +12,106 @@ class WeatherViewControllerViewModel: NSObject {
   //MARK: - Properties
   var delegate: WeatherViewControllerViewModelDelegate?
   
-  private var data = [
-    Weather(city: "Paris", temperature: 10, icon: "01d"),
-    Weather(city: "Lyon", temperature: 15, icon: "01d")
+  private var timer: Timer?
+  private var currentTime = 0
+  private let maxLoadingTime = 15
+  private let cityFetchInterval = 2
+  private let messageUpdateInterval = 2
+  
+  private var data: [Weather] = []
+  
+  //MARK: Message
+  private var messageUpdateNeeded: Bool {
+    currentTime.isMultiple(of: messageUpdateInterval)
+  }
+  private var messageIndex = 0 {
+    didSet {
+      let indices = messages.indices
+      guard !indices.contains(messageIndex) else { return }
+      messageIndex = 0
+    }
+  }
+  private let messages = [
+    "Downloading data...",
+    "A few more seconds...",
+    "Almost done..."
   ]
   
+  //MARK: City
+  private var cityFetchNeeded: Bool {
+    currentTime.isMultiple(of: cityFetchInterval)
+  }
+  private var cityIndex = 0
+  private let cities = [
+    "Rennes",
+    "Paris",
+    "Nantes",
+    "Bordeaux",
+    "Lyon"
+  ]
+  
+  
   //MARK: - Methods
-  func fetch() {
-    OpenWeatherAPI.getCurrentWeather(for: "Bordeaux", { [weak self] result in
+  private func updateProgress() {
+    let progress = Double(currentTime) / Double(maxLoadingTime)
+    delegate?.didUpdateProgress(progress: Float(progress))
+  }
+  
+  private func updateMessage() {
+    guard let message = messages.elementAt(messageIndex) else { return }
+    delegate?.didUpdateMessage(message: message)
+  }
+  
+  private func fetchCity() {
+    guard let city = cities.elementAt(cityIndex) else { return }
+    
+    OpenWeatherAPI.getCurrentWeather(for: city, { [weak self] result in
       guard let self = self else { return }
-      
+  
       switch(result) {
+        case .success(let response): self.data.append(Weather.from(response: response))
         case .failure(let error): print(error)
-        case .success(let response):
-          self.data.append(Weather.from(response: response))
-          DispatchQueue.main.async { self.delegate?.didUpdateDataSource() }
       }
     })
+  }
+  
+  
+  func start() {
+    reset()
+    updateMessage()
+    messageIndex += 1
+    let exec = #selector(execute)
+    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: exec, userInfo: nil, repeats: true)
+  }
+  
+  func reset() {
+    cityIndex = 0
+    messageIndex = 0
+    currentTime = 0
+    data.removeAll()
+    timer?.invalidate()
+  }
+  
+  @objc private func execute() {
+    self.currentTime += 1
+    self.updateProgress()
+    
+    if self.messageUpdateNeeded {
+      self.updateMessage()
+      self.messageIndex += 1
+    }
+    if self.cityFetchNeeded {
+      self.fetchCity()
+      self.cityIndex += 1
+    }
+    if self.currentTime >= self.maxLoadingTime {
+      self.timer?.invalidate()
+      
+      // Wait for progressBar animation to end
+      Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
+        self.delegate?.didFinishLoading()
+      }
+    }
   }
 }
 
@@ -53,5 +136,7 @@ extension WeatherViewControllerViewModel: UITableViewDataSource {
 
 //MARK: - Delegate Protocol
 protocol WeatherViewControllerViewModelDelegate {
-  func didUpdateDataSource()
+  func didUpdateMessage(message: String)
+  func didUpdateProgress(progress: Float)
+  func didFinishLoading()
 }

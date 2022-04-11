@@ -184,9 +184,9 @@
 			children = (
 				32B04EEC28045EF000342412 /* Array+Ext.swift */,
 				32B04EE828045CA300342412 /* NSLayoutConstraint+Ext.swift */,
+				32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */,
 				32B04EEA28045CD800342412 /* UIStackView+Ext.swift */,
 				32B04EE628045C8F00342412 /* UIView+Ext.swift */,
-				32B04EFE28046C1400342412 /* UIEdgeInsets+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

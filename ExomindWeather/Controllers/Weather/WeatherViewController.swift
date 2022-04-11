@@ -35,10 +35,9 @@ extension WeatherViewController {
     
     viewModel.delegate = self
     tableView.dataSource = viewModel
-    loadingView.progressLabel.text = "Downloading..."
     
     setupLayout()
-    viewModel.fetch()
+    viewModel.start()
   }
   
   private func setupLayout() {
@@ -61,11 +60,16 @@ extension WeatherViewController {
 // MARK: - WeatherViewControllerViewModelDelegate
 extension WeatherViewController: WeatherViewControllerViewModelDelegate {
   
-  func didUpdateDataSource() {
-    loadingView.progressBar.setProgress(1, animated: true)
-    Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-      self.loadingView.progressLabel.text = "Done"
-      self.tableView.reloadData()
-    }
+  func didUpdateMessage(message: String) {
+    loadingView.progressLabel.text = message
+  }
+  
+  func didUpdateProgress(progress: Float) {
+    loadingView.progressBar.setProgress(progress, animated: true)
+  }
+  
+  func didFinishLoading() {
+    tableView.reloadData()
+    loadingView.isLoading = false
   }
 }
