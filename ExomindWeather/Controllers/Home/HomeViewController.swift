@@ -10,7 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
   
   //MARK: - Properties
-  private let button = UIButton()
+  private let appView = AppView()
+  private let button = RoundedButton()
 
   //MARK: - Methods
   override func viewDidLoad() {
@@ -32,18 +33,24 @@ extension HomeViewController {
   private func setup() {
     title = "Home"
     view.backgroundColor = .systemBackground
-    button.setTitle("Weather", for: .normal)
-    button.setTitleColor(view.tintColor, for: .normal)
+    button.setTitle("Open", for: .normal)
     button.addTarget(self, action: #selector(onTouch), for: .touchUpInside)
   }
   
   private func setupLayout() {
+    appView.translatesAutoresizingMaskIntoConstraints = false
     button.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(button)
+    view.addSubviews(appView, button)
     
     NSLayoutConstraint.activate([
-      button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+      appView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      appView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+      appView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+      
+      button.heightAnchor.constraint(equalToConstant: 50),
+      button.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+      button.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+      button.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
     ])
   }
 }

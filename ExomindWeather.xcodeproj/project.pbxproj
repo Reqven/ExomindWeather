@@ -33,6 +33,7 @@
 		32B04F0228046F8800342412 /* WeatherTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0128046F8800342412 /* WeatherTableView.swift */; };
 		32B04F0428047EDA00342412 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0328047EDA00342412 /* UIViewController+Ext.swift */; };
 		32B04F0628049DCD00342412 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F0528049DCD00342412 /* Error.swift */; };
+		32B04F082804A7C400342412 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B04F072804A7C400342412 /* AppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		32B04F0128046F8800342412 /* WeatherTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableView.swift; sourceTree = "<group>"; };
 		32B04F0328047EDA00342412 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		32B04F0528049DCD00342412 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		32B04F072804A7C400342412 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 		32B04EF828046B8500342412 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				32B04F072804A7C400342412 /* AppView.swift */,
 				32B04EFC28046BB800342412 /* LoadingView.swift */,
 			);
 			path = Custom;
@@ -312,6 +315,7 @@
 				32B04ED52804590500342412 /* WeatherViewControllerViewModel.swift in Sources */,
 				32B04EE728045C8F00342412 /* UIView+Ext.swift in Sources */,
 				32B04EC0280450E100342412 /* HomeViewController.swift in Sources */,
+				32B04F082804A7C400342412 /* AppView.swift in Sources */,
 				32B04EFB28046B9E00342412 /* RoundedButton.swift in Sources */,
 				32B04F0228046F8800342412 /* WeatherTableView.swift in Sources */,
 				32B04F0428047EDA00342412 /* UIViewController+Ext.swift in Sources */,
