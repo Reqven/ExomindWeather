@@ -18,6 +18,8 @@ class WeatherViewController: UIViewController {
     super.viewDidLoad()
     setup()
     setupLayout()
+    
+    viewModel.fetch()
   }
 }
 
@@ -28,6 +30,8 @@ extension WeatherViewController {
   private func setup() {
     title = "Weather"
     view.backgroundColor = .systemBackground
+    
+    viewModel.delegate = self
     
     tableView.dataSource = viewModel
     tableView.rowHeight = UITableView.automaticDimension
@@ -44,5 +48,14 @@ extension WeatherViewController {
       tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
     ])
+  }
+}
+
+
+// MARK: - WeatherViewControllerViewModelDelegate
+extension WeatherViewController: WeatherViewControllerViewModelDelegate {
+  
+  func didUpdateDataSource() {
+    tableView.reloadData()
   }
 }

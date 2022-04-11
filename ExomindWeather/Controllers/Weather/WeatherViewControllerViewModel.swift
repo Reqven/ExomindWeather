@@ -10,10 +10,26 @@ import UIKit
 class WeatherViewControllerViewModel: NSObject {
   
   //MARK: - Properties
+  var delegate: WeatherViewControllerViewModelDelegate?
+  
   private var data = [
     Weather(city: "Paris", temperature: 10, image: UIImage(systemName: "cloud.fill")),
     Weather(city: "Lyon", temperature: 15, image: UIImage(systemName: "sun.max.fill"))
   ]
+  
+  //MARK: - Methods
+  func fetch() {
+    OpenWeatherAPI.getCurrentWeather(for: "Bordeaux", { [weak self] result in
+      guard let self = self else { return }
+      
+      switch(result) {
+        case .failure(let error): print(error)
+        case .success(let response):
+          self.data.append(Weather.from(response: response))
+          DispatchQueue.main.async { self.delegate?.didUpdateDataSource() }
+      }
+    })
+  }
 }
 
 
@@ -32,4 +48,10 @@ extension WeatherViewControllerViewModel: UITableViewDataSource {
     cell.setup(with: viewModel)
     return cell
   }
+}
+
+
+//MARK: - Delegate Protocol
+protocol WeatherViewControllerViewModelDelegate {
+  func didUpdateDataSource()
 }
